@@ -1,18 +1,18 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: 5
-  host: localhost
-  username: postgres
-  password: Ali.123@@$
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: your_db_development
+  database: recipe_group_development
 
 test:
   <<: *default
-  database: your_db_test
+  database: recipe_group_test
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  <<: *default
+  database: recipe_group_production
+  username: recipe_group
+  password: <%= ENV["RECIPE_GROUP_DATABASE_PASSWORD"] %>
