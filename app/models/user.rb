@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
 
+  has_many :recipes
+  
   validates :name, :email, :password, presence: true
 end
