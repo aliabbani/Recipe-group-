@@ -1,0 +1,25 @@
+<div class='p-5'>
+    <h1> Create Food </h1>
+
+    <%= form_with model: @food, url: foods_path do |form| %>
+        <% if @food.errors.any? %>
+            <div> 
+                <% @food.errors.full_message.each do |message| %>
+                    <p> <%= message %> </p>
+                <% end %>
+            </div>
+        <%end%>
+        <div class='mb-3'>
+            <%= form.text_field :name, placeholder: 'Food Name' %>
+        </div>
+        <div class='mb-3'>
+            <%= form.text_field :text, placeholder: "Measurement Unit e.g, grams " %>
+        </div>
+        <div class='mb-3'>
+            <%= form.number_field :price, placeholder: "Price e.g, 5" %>
+        </div>
+        <div class='mb-3'>
+            <%= form.submit "Add Food", :class => "btn btn-primary" %>
+        </div>
+    <% end %>
+</div>
