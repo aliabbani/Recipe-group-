@@ -14,13 +14,18 @@ class FoodsController < ApplicationController
   def create
     food = current_user.foods.new(food_params)
     if food.save
-      redirect_to foods_path, notice: 'Food created successfully'
+      redirect_to foods_path, notice: 'Food Created Successfully'
     else
       flash.now[:alert] = food.errors
     end
   end
 
-  def delete
+  def destroy
+    @food = Food.find(params[:id])
+    print 'food data'
+    puts @food
+    @food.destroy
+    redirect_to foods_path, notice: 'Food Deleted Successfully'
   end
 
   def food_params
