@@ -79,5 +79,5 @@ gem 'devise'
 # confirmation for login
 gem 'letter_opener', group: :development
 
-# Cancancan authorization
+# Cancancan authorization after devise
 gem 'cancancan'
