@@ -1,0 +1,30 @@
+  <%= form_with model: @recipe, method: :post, local: true do |form| %>
+    <div >
+      <%= form.label :name, "Name" %>
+      <%= form.text_field :name, placeholder: "Recipe Name", required: true %>
+    </div>
+
+    <div >
+      <%= form.label :description, "Description" %>
+      <%= form.text_field :description, placeholder: "Recipe Description", required: true %>
+    </div>
+
+    <div >
+      <%= form.label :preparation_time, "Preparation Time" %>
+      <%= form.text_field :preparation_time, placeholder: "Recipe Preparation Time", required: true %>
+    </div>
+
+    <div >
+      <%= form.label :cooking_time, "Cooking Time" %>
+      <%= form.text_field :cooking_time, placeholder: "Recipe Cooking Time", required: true %>
+    </div>
+
+    <div>
+      <%= form.label :public, "Public" %>
+      <%= form.check_box :public %>
+    </div>
+
+    <div>
+      <%= form.submit "Create", class: "btn btn-primary", disable_with: "Please wait..." %>
+    </div>
+  <% end %>
