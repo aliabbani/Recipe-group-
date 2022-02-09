@@ -1,5 +1,4 @@
 class FoodsController < ApplicationController
-
   def index
     @foods = Food.all.order('created_at Desc')
   end
@@ -16,6 +15,7 @@ class FoodsController < ApplicationController
     food = current_user.foods.new(food_params)
 
     return unless can? :create, food
+
     if food.save
       redirect_to foods_path, notice: 'Food Created Successfully'
     else
@@ -29,7 +29,7 @@ class FoodsController < ApplicationController
     return unless can? :destroy, @food
 
     @food.destroy
-    redirect_to foods_path, notice: 'Food Deleted Successfully'
+    redirect_to foods_path, notice: 'Deleted Successfully'
   end
 
   def food_params
