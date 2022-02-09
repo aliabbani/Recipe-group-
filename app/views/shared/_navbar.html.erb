@@ -1,5 +1,8 @@
 <nav class="navbar navbar-light bg-light">
   <h3>Recipe</h3>
+    <%= link_to "Food", foods_path, class: "justify-content-center align-self-center" %>
+    <%= link_to "Recipes", recipes_path, class: "justify-content-center align-self-center" %>
+
   <% if user_signed_in? %>
     <%= link_to "Home", root_path, class: "justify-content-center align-self-center" %>
     <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "justify-content-center align-self-center btn btn-primary" %>

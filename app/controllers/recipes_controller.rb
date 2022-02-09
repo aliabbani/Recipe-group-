@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes.all
   end
 
   def show
@@ -28,12 +28,12 @@ class RecipesController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @recipe = current_user.recipes.find(params[:id])
-  #   @recipe.destroy
-  #   flash[:alert] = 'Deleted Recipe'
-  #   redirect_to recipes_url
-  # end
+  def destroy
+    @recipe = current_user.recipes.find(params[:id])
+    @recipe.destroy
+    flash[:alert] = 'Deleted Recipe'
+    redirect_to recipes_url
+  end
 
   private
 
