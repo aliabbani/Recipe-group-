@@ -1,0 +1,20 @@
+    <%= form_with model: @recipe, method: :post, local: true do |form| %>
+    <div class="mb-5 w-50 ">
+      <%= form.label :name, "Food Name", :class => "form-label" %>
+      <%= form.text_field :name, placeholder: "Food Name", required: true, :class => "form-control" %>
+    </div>
+
+    <div class="mb-5 w-50">
+      <%= form.label :description, "Qauntity", :class => "form-label" %>
+      <%= form.text_field :description, placeholder: "Qauntity", required: true, :class => "form-control" %>
+    </div>
+
+    <div>
+      <%= form.label :public, "You can make your recipe public" %>
+      <%= form.check_box :public %>
+    </div>
+
+    <div>
+      <%= form.submit "Create", class: "btn btn-primary", disable_with: "Please wait..." %>
+    </div>
+  <% end %>
