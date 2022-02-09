@@ -1,6 +1,4 @@
 class FoodsController < ApplicationController
-  # load_and_authorize_resource
-
   def index
     @foods = Food.all.order('created_at Desc')
   end
@@ -15,6 +13,9 @@ class FoodsController < ApplicationController
 
   def create
     food = current_user.foods.new(food_params)
+
+    return unless can? :create, food
+
     if food.save
       redirect_to foods_path, notice: 'Food Created Successfully'
     else
@@ -25,8 +26,10 @@ class FoodsController < ApplicationController
   def destroy
     @food = Food.find(params[:id])
 
+    return unless can? :destroy, @food
+
     @food.destroy
-    redirect_to foods_path, notice: 'Food Deleted Successfully'
+    redirect_to foods_path, notice: 'Deleted Successfully'
   end
 
   def food_params
