@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -8,6 +6,6 @@ class Ability
 
     return unless user.present?
 
-    can [:read, :create, :destroy], Food, user: user
+    can %i[read create destroy], Food, user: user
   end
 end
