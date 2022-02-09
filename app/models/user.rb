@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :recipes
 
   validates :name, :email, :password, presence: true
+  has_many :foods
 end
