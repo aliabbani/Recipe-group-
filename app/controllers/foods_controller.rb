@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  # load_and_authorize_resource
+
   def index
     @foods = Food.all.order('created_at Desc')
   end
@@ -22,8 +24,7 @@ class FoodsController < ApplicationController
 
   def destroy
     @food = Food.find(params[:id])
-    print 'food data'
-    puts @food
+
     @food.destroy
     redirect_to foods_path, notice: 'Food Deleted Successfully'
   end
