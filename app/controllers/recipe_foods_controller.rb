@@ -1,12 +1,12 @@
 class RecipeFoodsController < ApplicationController
   def new
-      @recipe_food = RecipeFood.new
+    @recipe_food = RecipeFood.new
   end
 
   def create
     @food = Food.all
     recipe = Recipe.find(params[:recipe_id])
-    @recipe_foods = recipe.recipe_foods.new(quantity: recipe_food_params[:quantity], food_id: food.id)
+    @recipe_foods = recipe.recipe_foods.new(quantity: recipe_food_params[:quantity], food_id: @food.id)
 
     respond_to do |format|
       format.html do

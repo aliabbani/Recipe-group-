@@ -12,8 +12,8 @@
 </div>
 <div>
   <%= link_to "Generate shoping list", recipe_path(@recipe.id), :class => "btn btn-primary my-5" %>
-  <!-- Modal -->
-  <%= render "ingredient" %>
+  <%= link_to "Add Ingredient", new_recipe_recipe_food_path(@recipe.id), :class => "btn btn-primary my-5" %>
+
 <hr>
 
 <table class="table">
