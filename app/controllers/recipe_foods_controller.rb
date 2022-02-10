@@ -12,20 +12,14 @@ class RecipeFoodsController < ApplicationController
   end
 
   def create
-    @foods = Food.all
-    @recipe = Recipe.find(params[:recipe_id])
-    @recipe_foods = recipe.recipe_foods.new(quantity: recipe_food_params[:quantity], food_id: @food.id,
-                                            recipe_id: @recipe.id)
+    recipe = Recipe.find(params[:recipe_id])
+    recipe_food = recipe.recipeFoods.new(quantity: recipe_food_params[:quantity], food_id: recipe_food_params[:food_id],
+    recipe_id: recipe.id)
 
-    respond_to do |format|
-      format.html do
-        if @recipe_foods.save
-          flash[:success] = 'You have successfully added an ingredient.'
-        else
-          flash.now[:error] = 'Error: Ingredient could not be saved'
-        end
-        redirect_to recipe_path(params[:recipe_id])
-      end
+    if recipe_food.save
+      flash.now[:success] = 'You have successfully added an ingredient.'
+    else
+      flash.now[:error] = 'Error: Ingredient could not be saved'
     end
   end
 
@@ -42,6 +36,6 @@ class RecipeFoodsController < ApplicationController
   private
 
   def recipe_food_params
-    params.require(:recipe_food).permit(:quantity)
+    params.require(:recipe_food).permit(:quantity, :food_id)
   end
 end

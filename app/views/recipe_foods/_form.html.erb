@@ -1,17 +1,15 @@
 <%= @recipe.id %>
-<%= form_with model: @recipeFood, method: :post, local: true do |form| %>
-
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+<%= form_with model: @recipeFood, url: recipe_recipe_foods_path(@recipe.id), method: :post, local: true do |form| %>
+    <select name='food_id' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
         <option selected>Select Food</option>
         <% @foods.each do |f| %>
         <option value=<%= f.id %>><%= f.name %></option>
         <% end %>
     </select> 
 
-
     <div class="mb-5 w-25">
-        <%= form.label :description, "Qauntity", :class => "form-label" %>
-        <%= form.text_field :description, placeholder: "Qauntity", required: true, :class => "form-control" %>
+        <%= form.label :quantity, "Quantity", :class => "form-label" %>
+        <%= form.number_field :quantity, placeholder: "Qauntity", required: true, :class => "form-control" %>
     </div>
 
     <div>
@@ -19,8 +17,3 @@
     </div>
 
 <% end %>
-<%
-=begin%>
- url: recipe_recipe_foods_path(recipe_id) 
-<%
-=end%>
