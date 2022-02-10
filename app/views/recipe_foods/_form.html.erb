@@ -1,3 +1,4 @@
+<%= @recipe.id %>
 <%= form_with model: @recipeFood, method: :post, local: true do |form| %>
 
     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
@@ -18,3 +19,8 @@
     </div>
 
 <% end %>
+<%
+=begin%>
+ url: recipe_recipe_foods_path(recipe_id) 
+<%
+=end%>
