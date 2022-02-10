@@ -26,12 +26,16 @@
     </tr>
   </thead>
   <tbody>
+  <% @recipe_foods.each do |r| %>
     <tr>
-      <th scope="row">Food1</th>
-      <td>Quantity1</td>
-      <td>Value1</td>
-      <td>action1</td>
+      <th scope="row"><%= r.food.name %></th>
+      <td><%= r.quantity %></td>
+      <td><%= r.food.price * r.quantity %></td>
+      <td>
+        <%= link_to "Remove", recipe_path(@recipe.id), :class => "btn btn-danger" %>
+      </td>
     </tr>
+  <% end %>
   </tbody>
   <%
 =begin%>

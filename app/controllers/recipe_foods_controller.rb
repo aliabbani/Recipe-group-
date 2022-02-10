@@ -1,12 +1,14 @@
 class RecipeFoodsController < ApplicationController
   def new
     @recipe_food = RecipeFood.new
+    @foods = Food.all
   end
 
   def create
-    @food = Food.all
-    recipe = Recipe.find(params[:recipe_id])
-    @recipe_foods = recipe.recipe_foods.new(quantity: recipe_food_params[:quantity], food_id: @food.id)
+    @foods = Food.all
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe_foods = recipe.recipe_foods.new(quantity: recipe_food_params[:quantity], food_id: @food.id,
+                                            recipe_id: @recipe.id)
 
     respond_to do |format|
       format.html do
@@ -25,7 +27,7 @@ class RecipeFoodsController < ApplicationController
     if ingredient.destroy
       flash[:notice] = 'Deleted ingredient!'
     else
-      flash[:alert] = "Failed to Delete the ingredient"
+      flash[:alert] = 'Failed to Delete the ingredient'
     end
     redirect_to recipe_path(params[:recipe_id])
   end
