@@ -1,6 +1,4 @@
-
-
-<%= form_with model: @recipeFood, url: recipe_recipe_foods_path(@recipe.id) do |form| %>
+<%= form_with model: @recipe_food, url: recipe_recipe_foods_path(@recipe.id) do |form| %>
 
     <select name='food_id' id='food_id' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
         <option selected>Select Food</option>

@@ -30,6 +30,7 @@
     <tr>
       <th scope="row"><%= r.food.name %></th>
       <td><%= r.quantity %></td>
+      <td><%= r.food.price %></td>
       <td><%= r.food.price * r.quantity %></td>
       <td>
         <%= link_to "Remove", recipe_path(@recipe.id), :class => "btn btn-danger" %>
