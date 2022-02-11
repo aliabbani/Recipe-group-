@@ -3,6 +3,7 @@ class GeneralShoppingListsController < ApplicationController
     sum = 0
     array.each do |number|
       sum += number.food.price
+      # sum += number.recipeFood.quantity
     end
     sum
   end
