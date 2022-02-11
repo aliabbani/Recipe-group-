@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Food #Index', type: :feature do
+RSpec.feature 'Food index', type: :feature do
   background do
     visit new_user_session_path
 
@@ -14,21 +14,21 @@ RSpec.feature 'Food #Index', type: :feature do
     visit foods_path
   end
 
-  scenario 'show My Foods on page' do
+  scenario 'display My Foods on page' do
     expect(page).to have_content('meat')
   end
 
-  scenario 'show food details on page' do
+  scenario 'display food details on page' do
     expect(page).to have_content @food.name
     expect(page).to have_content @food.measurement_unit
     expect(page).to have_content @food.price
   end
 
-  scenario 'show Add Food button on page' do
+  scenario 'display Add Food button on page' do
     expect(page).to have_link 'Add Food'
   end
 
-  scenario 'Should display a view button' do
+  scenario 'display a view button' do
     expect(page).to have_link 'view'
   end
 

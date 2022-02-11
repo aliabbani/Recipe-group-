@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'RecipeIndices', type: :feature do
+RSpec.feature 'Recipe index', type: :feature do
   background do
     visit new_user_session_path
 
@@ -15,16 +15,16 @@ RSpec.feature 'RecipeIndices', type: :feature do
     visit recipes_path
   end
 
-  scenario 'show All Recipes on page' do
+  scenario 'display all Recipes on page' do
     expect(page).to have_content 'All Recipes'
   end
 
-  scenario 'show recipe details on page' do
+  scenario 'display recipe details on page' do
     expect(page).to have_content @recipe.name
     expect(page).to have_content @recipe.description
   end
 
-  scenario 'show create your recipe button on page' do
+  scenario 'display create your recipe button on page' do
     expect(page).to have_link 'Create Your Recipe'
   end
 
@@ -32,7 +32,7 @@ RSpec.feature 'RecipeIndices', type: :feature do
     expect(page).to have_button 'Delete'
   end
 
-  scenario 'When I click on burger, I am redirected to that recipe\'s show page.' do
+  scenario 'When I click on recipe name, I am redirected to that recipe\'s show page.' do
     click_link(@recipe.name)
     expect(page).to have_current_path recipe_path(@recipe.id)
   end

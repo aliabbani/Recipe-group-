@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Recipe #Show', type: :feature do
+RSpec.feature 'Public Recipe', type: :feature do
   background do
     visit new_user_session_path
 
@@ -15,18 +15,15 @@ RSpec.feature 'Recipe #Show', type: :feature do
     visit public_recipes_path
   end
 
-  scenario 'Display recipe details on page' do
+  scenario 'display recipe details on page' do
+    expect(page).to have_content 'Public Recipes'
     expect(page).to have_content @recipe.name
     expect(page).to have_content @user.name
     expect(page).to have_content('Total food items:')
     expect(page).to have_content('Total price:')
   end
 
-  scenario 'show public status as true' do
+  scenario 'display public status as true' do
     expect(@recipe.public).to be_truthy
-  end
-
-  scenario 'Display recipe details on page' do
-    expect(page).to have_content 'Public Recipes'
   end
 end

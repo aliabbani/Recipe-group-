@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Recipe #Show', type: :feature do
+RSpec.feature 'Recipe show', type: :feature do
   background do
     visit new_user_session_path
 
@@ -34,7 +34,7 @@ RSpec.feature 'Recipe #Show', type: :feature do
     expect(page).to have_link 'Add Ingredient'
   end
 
-  scenario 'When I click on burger, I am redirected to that recipe\'s show page.' do
+  scenario 'When I click on add ingridient, I am redirected to that recipe_foods\'s new page.' do
     click_link('Add Ingredient')
     expect(page).to have_current_path new_recipe_recipe_food_path(@recipe.id)
   end
