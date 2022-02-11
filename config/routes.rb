@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get 'general_shopping_lists/index'
   devise_for :users
   root "foods#index"
 
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
     resources :recipe_foods, except: [:edit, :update]
   end
   resources :public_recipes, only: [:index]
-
+  resources :general_shopping_lists, only: [:index]
   # Defines the root path route ("/")
   # root "articles#index"
 end
