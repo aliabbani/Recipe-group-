@@ -1,4 +1,8 @@
-<h1>GeneralShoppingLists#index</h1>
+<h1>Shopping List</h1>
+<div class="d-flex">
+  <h3>Amount of food items to buy:  </h3>
+  <h3>Total value of food needed: </h3>
+</div>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -8,6 +12,12 @@
         </tr>
     </thead>
     <tbody>
-    <td> <%=  %> </td>
+     <% @recipe_foods.each do |r| %>
+    <tr>
+      <th scope="row"><%= r.food.name %></th>
+      <td><%= r.quantity %></td>
+      <td><%= r.food.price * r.quantity %></td>
+    </tr>
+    <% end %>
     </tbody>
     </table>
