@@ -11,8 +11,8 @@ RSpec.describe RecipeFood, type: :model do
     end
 
     it 'quantity should be present' do
-        subject.quantity = nil
-        expect(subject).to_not be_valid
+      subject.quantity = nil
+      expect(subject).to_not be_valid
     end
 
     it 'quantity should be greater 0' do

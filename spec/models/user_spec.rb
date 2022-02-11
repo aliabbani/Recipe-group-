@@ -11,13 +11,13 @@ RSpec.describe User, type: :model do
     end
 
     it 'email should be present' do
-        subject.email = nil
-        expect(subject).to_not be_valid
+      subject.email = nil
+      expect(subject).to_not be_valid
     end
 
     it 'password should be present' do
-        subject.password = nil
-        expect(subject).to_not be_valid
-      end
+      subject.password = nil
+      expect(subject).to_not be_valid
+    end
   end
 end
