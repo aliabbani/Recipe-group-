@@ -30,7 +30,6 @@
     <tr>
       <th scope="row"><%= r.food.name %></th>
       <td><%= r.quantity %></td>
-      <td><%= r.food.price %></td>
       <td><%= r.food.price * r.quantity %></td>
       <td>
         <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, r.id), method: :delete, :class => "btn btn-danger" %>
