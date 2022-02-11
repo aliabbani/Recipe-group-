@@ -33,33 +33,9 @@
       <td><%= r.food.price %></td>
       <td><%= r.food.price * r.quantity %></td>
       <td>
-        <%= link_to "Remove", recipe_path(@recipe.id), :class => "btn btn-danger" %>
+        <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, r.id), method: :delete, :class => "btn btn-danger" %>
       </td>
     </tr>
   <% end %>
   </tbody>
-  <%
-=begin%>
- <tbody>
-    <tr>
-      <th scope="row">Food1</th>
-      <td>Quantity1</td>
-      <td>Value1</td>
-      <td>action1</td>
-    </tr>
-    <tr>
-      <th scope="row">Food2</th>
-      <td>Quantity2</td>
-      <td>Value2</td>
-      <td>action2</td>
-    </tr>
-    <tr>
-      <th scope="row">Food3</th>
-      <td>Quantity3</td>
-      <td>Value3</td>
-      <td>action3</td>
-    </tr>
-  </tbody> 
-<%
-=end%>
 </table>

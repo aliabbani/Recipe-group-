@@ -1,8 +1,8 @@
 class RecipeFoodsController < ApplicationController
-  def index
-  end
+  def index; end
 
   def show
+    @recipe_food = RecipeFood.find(params[:id])
   end
 
   def new
@@ -13,7 +13,8 @@ class RecipeFoodsController < ApplicationController
 
   def create
     recipe = Recipe.find(params[:recipe_id])
-    recipe_food = recipe.recipe_foods.new(quantity: recipe_food_params[:quantity], food_id: params[:food_id], recipe_id: recipe.id)
+    recipe_food = recipe.recipe_foods.new(quantity: recipe_food_params[:quantity], food_id: params[:food_id],
+                                          recipe_id: recipe.id)
 
     if recipe_food.save
       redirect_to recipes_path, notice: 'Recipe created successfully!'
@@ -23,13 +24,11 @@ class RecipeFoodsController < ApplicationController
   end
 
   def destroy
-    ingredient = RecipeFood.find(params[:id])
-    if ingredient.destroy
-      flash[:notice] = 'Deleted ingredient!'
-    else
-      flash[:alert] = 'Failed to Delete the ingredient'
-    end
-    redirect_to recipe_path(params[:recipe_id])
+    @recipe = Recipe.find(params[:recipe_id])
+    recipe_foods = RecipeFood.find(params[:id])
+    recipe_foods.destroy!
+    flash[:notice] = 'Deleted ingredient!'
+    redirect_to recipe_path(@recipe.id)
   end
 
   private
