@@ -9,3 +9,5 @@
 # amine = User.create!(name: 'Amine', email: 'amine@mail.com', password: '123456')
 
 # recipe1 = Recipe.create!(user_id: amine.id, name: 'Recipe1', preparation_time: 45, cooking_time: 60, description: 'description1', public: false)
+
+# recipeFood1 = RecipeFood.create!(quantity: 5, food_id: 1, recipe_id: 1)
