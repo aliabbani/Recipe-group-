@@ -3,12 +3,6 @@
     <%= link_to "Food", foods_path, class: "justify-content-center align-self-center" %>
     <%= link_to "Recipes", recipes_path, class: "justify-content-center align-self-center" %>
     <%= link_to "Public Recipes", public_recipes_path, class: "justify-content-center align-self-center" %>
-    <%
-=begin%>
- <%= link_to "Shopping List", recipe_general_shopping_lists_path(@recipes), class: "justify-content-center align-self-center" %> 
-<%
-=end%>
-
 
   <% if user_signed_in? %>
     <%= link_to "Home", root_path, class: "justify-content-center align-self-center" %>
