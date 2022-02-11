@@ -81,3 +81,6 @@ gem 'letter_opener', group: :development
 
 # Cancancan authorization after devise
 gem 'cancancan'
+
+# n+1 problem gem solver
+gem 'bullet', group: 'development'

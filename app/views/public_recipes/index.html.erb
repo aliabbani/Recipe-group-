@@ -1,18 +1,20 @@
 <h1>Public Recipes</h1>
-
 <% @recipes.each do |recipe| %>
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row">
         <div class="col-md-4 p-5">
+          <%= link_to recipe_path(recipe.id) do %>
             <h5 class="card-title"><%= recipe.name %></h5>
-            <h6>By: <%= current_user.name %></h6>
+          <% end %>
+          <h6>By: <%= current_user.name %></h6>
         </div>
         <div class="col-md-8 py-5">
           <div class="card-body py-0">
-            <p class="card-text">Total food items: </p>
-            <p class="card-text">Total price: </p>
+            <p class="card-text">Total food items: <%= recipe.total_food_items %> </p>
+            <p class="card-text">Total price: $<%= recipe.total_price %></p>
           </div>
         </div>
       </div>
     </div>
+
 <% end %>
