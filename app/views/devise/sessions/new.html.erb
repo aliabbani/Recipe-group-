@@ -4,12 +4,12 @@
   <div class="px-5">
     <div class="field p-2">
       <%= f.label :email, :class => "form-label" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", :class => "form-control" %>
     </div>
 
     <div class="field p-2">
       <%= f.label :password, :class => "form-label" %><br />
-      <%= f.password_field :password, autocomplete: "current-password", :class => "form-control" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", :class => "form-control" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
