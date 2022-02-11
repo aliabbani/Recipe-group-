@@ -1,24 +1,66 @@
-# README
+# Blog App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This project is a Food Recipe application built with Ruby and Ruby on Rails
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby
+- Ruby on Rails
+- CSS
 
-* System dependencies
+## Getting Started
 
-* Configuration
+```
+git clone https://github.com/aliabbani/Recipe-group-
 
-* Database creation
+cd Recipe-group-
 
-* Database initialization
+rails db:create
+rails db:migrate
+rails db:seed
 
-* How to run the test suite
+rails server
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Tests
 
-* Deployment instructions
+```
+git clone https://github.com/aliabbani/Recipe-group-
+cd Recipe-group-
+bundle install
+gem install rspec
+rspec
+```
 
-* ...
+## Authors
+
+👤 **Abdul Wuyep**
+
+- GitHub: [@wuyepabdul](https://github.com/wuyepabdul)
+- Twitter: [@AbdulWuyep](https://twitter.com/AbdulWuyep)
+- LinkedIn: [Abdul Wuyep](https://www.linkedin.com/in/abdul-wuyep/)
+
+👤 **Ali Abbani**
+
+- GitHub: [@aliabbani](https://github.com/aliabbani)
+- LinkedIn: [Ali Abbani](https://www.linkedin.com/in/aliabbani/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
