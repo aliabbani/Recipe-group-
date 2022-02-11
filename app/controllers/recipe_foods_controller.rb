@@ -17,7 +17,7 @@ class RecipeFoodsController < ApplicationController
                                           recipe_id: recipe.id)
 
     if recipe_food.save
-      redirect_to recipes_path, notice: 'Recipe created successfully!'
+      redirect_to recipe_path(recipe.id), notice: 'Recipe created successfully!'
     else
       flash.now[:alert] = 'Failed to create recipe'
     end
