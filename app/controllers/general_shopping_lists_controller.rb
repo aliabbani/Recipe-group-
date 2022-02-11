@@ -2,8 +2,8 @@ class GeneralShoppingListsController < ApplicationController
   def sum(array)
     sum = 0
     array.each do |number|
-      sum += number.food.price
-      # sum += number.recipeFood.quantity
+      # sum += number.food.price
+      sum += number.quantity * number.food.price
     end
     sum
   end
