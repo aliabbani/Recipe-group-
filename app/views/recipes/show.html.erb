@@ -26,7 +26,7 @@
     </tr>
   </thead>
   <tbody>
-  <% @recipe.recipe_foods.each do |r| %>
+  <% @recipe.recipe_foods.includes([:food]).each do |r| %>
     <tr>
       <th scope="row"><%= r.food.name %></th>
       <td><%= r.quantity %></td>
