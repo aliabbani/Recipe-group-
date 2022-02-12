@@ -1,0 +1,40 @@
+    <%= form_with model: @recipe, method: :post, local: true do |form| %>
+    <div class="mb-5 w-50 ">
+      <%= form.label :name, "Name", :class => "form-label" %>
+      <%= form.text_field :name, placeholder: "Recipe Name", required: true, :class => "form-control" %>
+    </div>
+
+    <div class="mb-5 w-50">
+      <%= form.label :description, "Description", :class => "form-label" %>
+      <%= form.text_field :description, placeholder: "Recipe Description", required: true, :class => "form-control" %>
+    </div>
+
+    <div class="mb-5 w-50">
+      <%= form.label :preparation_time, "Preparation Time", :class => "form-label" %>
+      <%= form.text_field :preparation_time, placeholder: "Recipe Preparation Time", required: true, :class => "form-control" %>
+      <div class="col-auto">
+        <span id="passwordHelpInline" class="form-text">
+        Time measured in minutes .
+        </span>
+      </div>
+    </div>
+
+    <div class="mb-2 w-50">
+      <%= form.label :cooking_time, "Cooking Time", :class => "form-label" %>
+      <%= form.text_field :cooking_time, placeholder: "Recipe Cooking Time", required: true, :class => "form-control" %>
+      <div class="col-auto">
+        <span id="passwordHelpInline" class="form-text">
+        Time measured in minutes .
+        </span>
+      </div>
+    </div>
+
+    <div>
+      <%= form.label :public, "You can make your recipe public" %>
+      <%= form.check_box :public %>
+    </div>
+
+    <div>
+      <%= form.submit "Create", class: "btn btn-primary", disable_with: "Please wait..." %>
+    </div>
+  <% end %>

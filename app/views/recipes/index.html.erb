@@ -1,0 +1,20 @@
+<h1>All Recipes</h1>
+
+<%= link_to "Create Your Recipe", new_recipe_path, :class => "btn btn-primary my-5" %>
+<% @recipes.each do |recipe| %>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row">
+        <div class="col-md-4 p-5">
+          <%= link_to recipe_path(recipe.id) do %>
+            <h5 class="card-title"><%= recipe.name %></h5>
+          <% end %>
+          <%= button_to 'Delete', recipe_path(recipe.id), method: :delete, :class => 'btn btn-primary' %>
+        </div>
+        <div class="col-md-8 py-5">
+          <div class="card-body py-0">
+            <p class="card-text"><%= recipe.description %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
