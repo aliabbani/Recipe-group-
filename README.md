@@ -32,6 +32,10 @@ gem install rspec
 rspec
 ```
 
+## deployment
+https://thawing-beyond-38533.herokuapp.com/
+
+
 ## Authors
 
 👤 **Abdul Wuyep**
