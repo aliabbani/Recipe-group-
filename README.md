@@ -42,8 +42,9 @@ rspec
 
 👤 **Ali Abbani**
 
-- GitHub: [@aliabbani](https://github.com/aliabbani)
-- LinkedIn: [Ali Abbani](https://www.linkedin.com/in/aliabbani/)
+- [GitHub](https://github.com/aliabbani)
+- [AngelList](https://angel.co/u/ali-abbani)
+- [LinkedIn](https://www.linkedin.com/in/ali-abbani-8b6246150/)
 
 ## 🤝 Contributing
 

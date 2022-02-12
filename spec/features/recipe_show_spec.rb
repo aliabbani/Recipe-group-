@@ -30,7 +30,7 @@ RSpec.feature 'Recipe show', type: :feature do
   end
 
   scenario 'display buttons on page' do
-    expect(page).to have_link 'Generate shoping list'
+    expect(page).to have_link 'Shoping list'
     expect(page).to have_link 'Add Ingredient'
   end
 
